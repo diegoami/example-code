@@ -1,4 +1,4 @@
-from strategy_best2 import Customer, LineItem, Order, best_promo, fidelity_promo, bulk_item_promo, large_order_promo
+from strategy_best3 import Customer, LineItem, Order, best_promo
 
 joe = Customer('John Doe', 0)  # <1>
 ann = Customer('Ann Smith', 1100)
