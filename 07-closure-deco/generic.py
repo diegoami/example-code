@@ -49,4 +49,8 @@ def _(seq):
     return '<ul>\n<li>' + inner + '</li>\n</ul>'
 
 # END HTMLIZE
-
+print(htmlize({1, 2, 3}))
+print(htmlize(abs))
+print(htmlize('Heimlich & Co.\n- a game'))
+print(htmlize(42))  # <3>
+print(htmlize(['alpha', 66, {3, 2, 1}]))  # <4>
