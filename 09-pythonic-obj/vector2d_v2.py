@@ -121,3 +121,56 @@ class Vector2d:
         memv = memoryview(octets[1:]).cast(typecode)
         return cls(*memv)
 # END VECTOR2D_V2
+
+
+v1 = Vector2d(3, 4)
+print(v1.x, v1.y)
+x, y = v1
+print(v1)
+v1_clone = eval(repr(v1))
+print(v1)
+octets = bytes(v1)
+print(octets)
+
+print(abs(v1))
+print(bool(v1), bool(Vector2d(0, 0)))
+v1_clone = Vector2d.frombytes(bytes(v1))
+    >>> v1_clone
+    Vector2d(3.0, 4.0)
+    >>> v1 == v1_clone
+    True
+
+
+Tests of ``format()`` with Cartesian coordinates:
+
+    >>> format(v1)
+    '(3.0, 4.0)'
+    >>> format(v1, '.2f')
+    '(3.00, 4.00)'
+    >>> format(v1, '.3e')
+    '(3.000e+00, 4.000e+00)'
+
+
+Tests of the ``angle`` method::
+
+    >>> Vector2d(0, 0).angle()
+    0.0
+    >>> Vector2d(1, 0).angle()
+    0.0
+    >>> epsilon = 10**-8
+    >>> abs(Vector2d(0, 1).angle() - math.pi/2) < epsilon
+    True
+    >>> abs(Vector2d(1, 1).angle() - math.pi/4) < epsilon
+    True
+
+
+Tests of ``format()`` with polar coordinates:
+
+    >>> format(Vector2d(1, 1), 'p')  # doctest:+ELLIPSIS
+    '<1.414213..., 0.785398...>'
+    >>> format(Vector2d(1, 1), '.3ep')
+    '<1.414e+00, 7.854e-01>'
+    >>> format(Vector2d(1, 1), '0.5fp')
+    '<1.41421, 0.78540>'
+
+"""

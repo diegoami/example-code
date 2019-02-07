@@ -1,11 +1,4 @@
-"""
->>> basketball_team = ['Sue', 'Tina', 'Maya', 'Diana', 'Pat']
->>> bus = TwilightBus(basketball_team)
->>> bus.drop('Tina')
->>> bus.drop('Pat')
->>> basketball_team
-['Sue', 'Maya', 'Diana']
-"""
+
 
 # BEGIN TWILIGHT_BUS_CLASS
 class TwilightBus:
@@ -24,3 +17,9 @@ class TwilightBus:
         self.passengers.remove(name)  # <3>
 # END TWILIGHT_BUS_CLASS
 
+
+basketball_team = ['Sue', 'Tina', 'Maya', 'Diana', 'Pat']
+bus = TwilightBus(basketball_team)
+bus.drop('Tina')
+bus.drop('Pat')
+print(basketball_team)

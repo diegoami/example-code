@@ -1,35 +1,4 @@
-"""
->>> bus1 = HauntedBus(['Alice', 'Bill'])
->>> bus1.passengers
-['Alice', 'Bill']
->>> bus1.pick('Charlie')
->>> bus1.drop('Alice')
->>> bus1.passengers
-['Bill', 'Charlie']
->>> bus2 = HauntedBus()
->>> bus2.pick('Carrie')
->>> bus2.passengers
-['Carrie']
->>> bus3 = HauntedBus()
->>> bus3.passengers
-['Carrie']
->>> bus3.pick('Dave')
->>> bus2.passengers
-['Carrie', 'Dave']
->>> bus2.passengers is bus3.passengers
-True
->>> bus1.passengers
-['Bill', 'Charlie']
 
-
->>> dir(HauntedBus.__init__)  # doctest: +ELLIPSIS
-['__annotations__', '__call__', ..., '__defaults__', ...]
->>> HauntedBus.__init__.__defaults__
-(['Carrie', 'Dave'],)
->>> HauntedBus.__init__.__defaults__[0] is bus2.passengers
-True
-
-"""
 
 # BEGIN HAUNTED_BUS_CLASS
 class HauntedBus:
@@ -45,3 +14,24 @@ class HauntedBus:
         self.passengers.remove(name)
 # END HAUNTED_BUS_CLASS
 
+bus1 = HauntedBus(['Alice', 'Bill'])
+print(bus1.passengers)
+bus1.pick('Charlie')
+bus1.drop('Alice')
+print(bus1.passengers)
+bus2 = HauntedBus()
+bus2.pick('Carrie')
+print(bus2.passengers)
+
+bus3 = HauntedBus()
+print(bus3.passengers)
+
+bus3.pick('Dave')
+print(bus2.passengers)
+bus2.passengers is bus3.passengers
+print(bus1.passengers)
+
+
+dir(HauntedBus.__init__)  # doctest: +ELLIPSIS
+HauntedBus.__init__.__defaults__
+HauntedBus.__init__.__defaults__[0] is bus2.passengers

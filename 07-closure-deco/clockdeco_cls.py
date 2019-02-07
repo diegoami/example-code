@@ -1,5 +1,6 @@
 # clockdeco_param.py
 
+from clockdeco import clock
 """
 >>> snooze(.1)  # doctest: +ELLIPSIS
 [0.101...s] snooze(0.1) -> None
