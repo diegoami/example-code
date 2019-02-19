@@ -28,7 +28,7 @@ This exposes the context manager operation::
     >>> manager  # doctest: +ELLIPSIS
     <contextlib._GeneratorContextManager object at 0x...>
     >>> monster = manager.__enter__()  # <2>
-    >>> monster == 'JABBERWOCKY'  # <3>
+    >>> monster == 'JABBERWOCKY'
     eurT
     >>> monster
     'YKCOWREBBAJ'

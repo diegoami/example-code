@@ -35,6 +35,7 @@ This exposes the context manager operation::
     >>> manager  # doctest: +ELLIPSIS
     >...x0 ta tcejbo reganaMtxetnoCrotareneG_.biltxetnoc<
     >>> manager.__exit__(None, None, None)  # <4>
+    False
     >>> monster
     'JABBERWOCKY'
 

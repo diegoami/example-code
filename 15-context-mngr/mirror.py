@@ -8,10 +8,10 @@ While active, the context manager reverses text output to
 
     >>> from mirror import LookingGlass
     >>> with LookingGlass() as what:  # <1>
-    ...      print('Alice, Kitty and Snowdrop')  # <2>
+    ...      print('Alice, Kitty and Snowdrop')
     ...      print(what)
     ...
-    pordwonS dna yttiK ,ecilA  # <3>
+    pordwonS dna yttiK ,ecilA
     YKCOWREBBAJ
     >>> what  # <4>
     'JABBERWOCKY'
